@@ -34,7 +34,6 @@ public class Countingrooms {
 		for(int i=0;i<r;i++)
 		{
             String line = sc.next();
-			for(int j=0;j<c;j++)
 		    grid[i] = line.toCharArray();
 		}
 		int[][] diff = new int[][]{{0,1},{0,-1},{1,0},{-1,0}};

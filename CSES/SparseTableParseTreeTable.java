@@ -34,7 +34,7 @@ public class SparseTableParseTreeTable {
         {
             for(int j=0;j<n;j++)
             {
-                if(table[i][j]>0)
+                if(table[i][j]>=0)
                     System.out.print(table[i][j]+" ");
             }
             System.out.println();

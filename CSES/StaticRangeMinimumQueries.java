@@ -48,8 +48,6 @@ public class StaticRangeMinimumQueries {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-
-        // Precompute logarithms
         int[] log = new int[n + 1];
         for (int i = 2; i <= n; i++) {
             log[i] = log[i / 2] + 1;
@@ -58,12 +56,10 @@ public class StaticRangeMinimumQueries {
         int row = log[n] + 1;
         int[][] table = new int[row][n];
 
-        // Initialize the first row with array elements
         for (int i = 0; i < n; i++) {
             table[0][i] = arr[i];
         }
 
-        // Build sparse table
         for (int i = 1; i < row; i++) {
             for (int j = 0; j + (1 << i) <= n; j++) {
                 table[i][j] = Math.min(table[i - 1][j], table[i - 1][j + (1 << (i - 1))]);
